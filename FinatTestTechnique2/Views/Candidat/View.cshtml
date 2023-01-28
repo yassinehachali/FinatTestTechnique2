@@ -1,0 +1,61 @@
+﻿@model ViewCandidateModel
+@{
+}
+
+<h1>Candidature</h1>
+<form id="idForm" method="get" action="View" class="mt-5" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Nom</label>
+        <input type="text" class="form-control" asp-for="Nom" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Prénom</label>
+        <input type="text" class="form-control" asp-for="Prenom" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Adresse Email</label>
+        <input type="email" class="form-control" asp-for="Mail" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Téléphone</label>
+        <input type="tel" class="form-control" asp-for="Telephone" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Niveau D'études</label>
+        <input type="text" class="form-control" asp-for="NiveauEtude" value="Bac+@Model.AnneesExperience" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Années D'expérience'</label>
+        <input type="number" class="form-control" asp-for="AnneesExperience" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Dernier employeur</label>
+        <input type="text" class="form-control" asp-for="DernierEmployeur" readonly>
+    </div>
+    <button type="submit" class="btn btn-primary" asp-action="GetCv" asp-controller="Candidat">View CV</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Candidat">Supprimer Candidature</button>
+</form>
+<script>
+    document.getElementById("idForm").addEventListener("submit", function (event) {
+        var getCvButton = document.querySelector("button[type='submit'][asp-action='GetCv']");
+        var deleteButton = document.querySelector("button[type='submit'][asp-action='Delete']");
+
+        if (event.target === getCvButton) {
+            event.preventDefault();
+            this.method = "get";
+            this.submit();
+        } else if (event.target === deleteButton) {
+            event.preventDefault();
+            this.method = "post";
+            this.submit();
+        }
+    });
+</script>
+
+
+
+

@@ -1,0 +1,45 @@
+﻿@model List<FinatTestTechnique2.Models.Candidat>
+
+<h1>List Des Candidature</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        @Html.TextBox("searchByName",null,new{@class="form-control",@placeholder="Nom . . ."})
+        @Html.TextBox("searchByPrenom",null,new{@class="form-control",@placeholder="Prénom . . ."})
+        @Html.TextBox("searchByEmail",null,new{@class="form-control",@placeholder="Email . . ."})
+        @Html.TextBox("searchByTelephone",null,new{@class="form-control",@placeholder="Téléphone . . ."})
+        <input type="submit" value="Search" class="btn btn-outline-success">
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Niveau D'études</th>
+            <th>Années D'éxperience</th>
+            <th>Dernier Employeur</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var candidat in Model)
+        {
+            <tr>
+                <td>@candidat.Id</td>
+                <td>@candidat.Nom</td>
+                <td>@candidat.Prenom</td>
+                <td>@candidat.Mail</td>
+                <td>@candidat.Telephone</td>
+                <td>@candidat.NiveauEtude</td>
+                <td>@candidat.AnneesExperience</td>
+                <td>@candidat.DernierEmployeur</td>
+                <td><a href="Candidat/View/@candidat.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

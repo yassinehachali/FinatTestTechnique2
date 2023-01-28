@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model AddCandidatViewModel
+
+@{
+    var msg = TempData["Message"] as string;
+}
+<h1>Candidature</h1>
+@if (!string.IsNullOrEmpty(msg))
+{
+    <div class="alert alert-success">
+        <p>@msg</p>
+    </div>
+}
+<form method="post" action="Add" class="mt-5" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="" class="form-label">Nom</label>
+        <input type="text" class="form-control" asp-for="Nom">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Prénom</label>
+        <input type="text" class="form-control" asp-for="Prenom">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Adresse Email</label>
+        <input type="email" class="form-control" asp-for="Mail">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Téléphone</label>
+        <input type="tel" class="form-control" asp-for="Telephone">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Niveau D'études</label>
+        <select class="form-select" aria-label="Niveau D'étude" asp-for="NiveauEtude">
+         <option selected>Open this select menu</option>
+         <option value="1">Bac+2</option>
+         <option value="2">Bac+3</option>
+         <option value="3">Bac+5</option>
+    </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Années D'expérience'</label>
+        <input type="number" class="form-control" asp-for="AnneesExperience">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Dernier employeur</label>
+        <input type="text" class="form-control" asp-for="DernierEmployeur">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">CV</label>
+        <input type="file" class="form-control" asp-for="CV" accept=".pdf, .doc, .docx">
+    </div>
+    <button onclick="return confirm('Are You sure ?')" type="submit" class="btn btn-primary">Verification</button>
+
+</form>

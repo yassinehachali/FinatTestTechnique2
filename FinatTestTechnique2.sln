@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinatTestTechnique2", "FinatTestTechnique2\FinatTestTechnique2.csproj", "{EE01975F-57D5-4EE0-A87B-4ADA4279C4DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE01975F-57D5-4EE0-A87B-4ADA4279C4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE01975F-57D5-4EE0-A87B-4ADA4279C4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE01975F-57D5-4EE0-A87B-4ADA4279C4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE01975F-57D5-4EE0-A87B-4ADA4279C4DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F35599A6-502B-4192-A3F4-575A6587B77C}
+	EndGlobalSection
+EndGlobal
